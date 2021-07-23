@@ -3,7 +3,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start -p 3005",
+    "pm2": "pm2"
   },
   "dependencies": {
     "next": "latest",

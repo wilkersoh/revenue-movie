@@ -1,0 +1,11 @@
+{
+  "apps": [
+      {
+          "name": "revenue_movie_task",
+          "script": "npm",
+          "args" : "start",
+          "instances": "max",
+          "exec_mode": "cluster"
+      }
+  ]
+}
