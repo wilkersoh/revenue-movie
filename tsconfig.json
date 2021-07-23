@@ -5,6 +5,12 @@
       "@/components/*": [
         "components/*"
       ],
+      "@/utils/*": [
+        "utils/*"
+      ],
+      "@/styles/*": [
+        "styles/*"
+      ]
     },
     "target": "es5",
     "lib": [
