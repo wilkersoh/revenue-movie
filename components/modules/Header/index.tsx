@@ -1,5 +1,5 @@
 import {useState, useEffect} from "react"
-
+import Link from "next/link";
 import Account from "@/components/Account";
 import Container from "@/components/Container";
 import Search from "@/components/Search";
@@ -29,9 +29,13 @@ const index: React.FC = () => {
           !show && "-top-24"
         }`}>
         <Container classes='w-full'>
-          <nav className='flex justify-between items-center'>
+          <nav className='flex justify-between items-center h-full'>
             <div className='bg-yellow-300 py-1 px-2 rounded-sm font-sans font-black'>
-              <p>TMDB</p>
+              <Link href='/'>
+                <a>
+                  <p>TMDB</p>
+                </a>
+              </Link>
             </div>
             <div className='flex'>
               <Search />
