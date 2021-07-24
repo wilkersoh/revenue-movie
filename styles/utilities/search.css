@@ -1,0 +1,26 @@
+.search-box input {
+  background-image: url("../../images/assets/search-bar.svg");
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1rem;
+  cursor: pointer;
+  position: relative;
+  border-radius: 0.25rem;
+  background-position: 6px 8px;
+  border-color: transparent;
+  transition: all ease .45s;
+  outline: none;
+  width: 0;
+  padding: 0.25rem 1rem;
+  border: 1px solid transparent;
+}
+
+.search-box input:focus {
+  width: 12rem;
+  padding: 0.25rem 0.85rem;
+  padding-left: 2.1rem;
+  cursor: text;
+  color: black;
+  background-color: #f5eaea;
+}
