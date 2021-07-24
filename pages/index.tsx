@@ -27,7 +27,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
     `${API_URL}/popular?api_key=${process.env.TMDB_MOVIE_KEY}`
   );
   const popularMovies = await res_popular.json();
-
+    console.log(`API_URL::: `, API_URL)
   return {
     props: {
       popularMovies,
