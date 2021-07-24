@@ -31,7 +31,7 @@ const ListItem = ({ results }) => {
 
   return (
     <ul className='flex overflow-x-auto -mx-4 md:-mx-16'>
-      {results.map((item) => {
+      {results?.map((item) => {
         const title = item?.original_title || item?.title
 
         return (

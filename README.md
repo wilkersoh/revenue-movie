@@ -7,9 +7,13 @@
 
 # Structure
 pages
-- index
-- search
-- [category]
+|--- movie
+|    |--- [name]
+|--- search
+|--- [category]
+|
+|
+|
 
 components
 - search
