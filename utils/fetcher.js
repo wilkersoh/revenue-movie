@@ -1,9 +1,7 @@
-// fetch("url.com", { qs: { a: 1, b: 2 } });
+import { API_URL } from "./urls";
 
-export default async (url, token) => {
-  const res = await fetch(url, {
-    method: "GET",
-  });
+export default async (path) => {
+  const res = await fetch(`${API_URL}${path}`);
 
   return res.json();
 };

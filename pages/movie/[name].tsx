@@ -12,13 +12,13 @@ const Index = ({ name }) => {
   const router = useRouter();
 
   const { data: video } = useSwr(
-    `${API_URL}/${router.query.id}/videos?api_key=${process.env.TMDB_MOVIE_KEY}`
+    `/${router.query.id}/videos?api_key=${process.env.TMDB_MOVIE_KEY}`
   );
 
   const { data: details } = useSwr(
-    `${API_URL}/${router.query.id}?api_key=${process.env.TMDB_MOVIE_KEY}`
+    `/${router.query.id}?api_key=${process.env.TMDB_MOVIE_KEY}`
   );
-
+  console.log(`details`, details)
   return (
     <App>
       <div>

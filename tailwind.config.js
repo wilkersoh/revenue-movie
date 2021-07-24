@@ -8,7 +8,11 @@ module.exports = {
         2000: "2000ms",
       },
       colors: {
-        "main":"rgb(254, 254, 254)"
+        main: "#141414",
+      },
+      height: {
+        sVideo: "400px",
+        mVideo: "600px"
       }
     },
   },
