@@ -32,6 +32,3 @@ yarn-error.log*
 
 # vercel
 .vercel
-
-/pages/movie
-/pages/movies
