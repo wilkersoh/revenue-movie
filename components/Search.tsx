@@ -1,5 +1,8 @@
 import { useRouter } from "next/router";
 
+
+// Handle the json query request from a user to query photo name, description, filename and its orginal link from your data storage
+
 const Search: React.FC = () => {
   const router = useRouter();
 
