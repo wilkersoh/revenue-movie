@@ -8,10 +8,12 @@ import { imageUrl } from "@/utils/urls";
 const index: React.FC<MovieListProps> = ({ category, total_pages, results }) => {
   return (
     <div>
-      <div className='flex items-end justify-between mb-2'>
+      <div className='flex items-end justify-between mb-2 md:-mx-8'>
         <h2 className='capitalize text-lg'>{category}</h2>
         <Link href={`/movies/${category}`}>
-          <a className='text-xs'>View More</a>
+          <a className='text-xs'>
+            View More <span>&#8594;</span>
+          </a>
         </Link>
       </div>
       {/* List component */}
@@ -28,7 +30,7 @@ const ListItem = ({ results }) => {
   }
 
   return (
-    <ul className='flex overflow-x-auto -mr-4'>
+    <ul className='flex overflow-x-auto -mx-4 md:-mx-16'>
       {results.map((item) => {
         const title = item?.original_title || item?.title
 
@@ -46,7 +48,7 @@ const ListItem = ({ results }) => {
               </a>
             </Link>
           </li>
-        );})}
+        )})}
     </ul>
   );
 };

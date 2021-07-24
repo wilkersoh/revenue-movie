@@ -25,7 +25,7 @@ const index: React.FC = () => {
   return (
     <>
       <header
-        className={`flex py-2 h-14 fixed top-0 w-full transition-top ease-in-out duration-700 ${
+        className={`flex py-2 h-14 fixed top-0 w-full transition-top ease-in-out duration-700 z-10 ${
           !show && "-top-24"
         }`}>
         <Container classes='w-full'>
