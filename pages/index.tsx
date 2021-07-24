@@ -1,6 +1,6 @@
 import App from "@/components/layouts/index"
 import { API_URL } from "@/utils/urls";
-import { GetStaticProps } from "next";
+import { GetServerSideProps } from "next";
 
 import MovieList from "@/components/modules/MovieList/index"
 import Container from "@/components/Container";
@@ -22,8 +22,10 @@ export default function Home({ popularMovies }) {
   );
 }
 
-export const getStaticProps: GetStaticProps = async () => {
-  const res_popular = await fetch(`${API_URL}/popular?api_key=${process.env.TMDB_MOVIE_KEY}`);
+export const getServerSideProps: GetServerSideProps = async () => {
+  const res_popular = await fetch(
+    `${API_URL}/popular?api_key=${process.env.TMDB_MOVIE_KEY}`
+  );
   const popularMovies = await res_popular.json();
 
   return {
@@ -31,4 +33,4 @@ export const getStaticProps: GetStaticProps = async () => {
       popularMovies,
     },
   };
-}
+};
