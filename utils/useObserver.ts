@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 const useObserver = (options) => {
   const [ref, setRef] = useState(null);
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState<boolean | any>(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(([entry]) => {

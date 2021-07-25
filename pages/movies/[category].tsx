@@ -6,10 +6,11 @@ import Container from "@/components/Container";
 import App from "@/components/layouts/index";
 import SkeletonImage from "@/components/elements/SkeletonImage";
 import Lists from "@/components/modules/Movies/Lists";
+import LoadMoreBtn from "@/components/modules/Movies/LoadMoreBtn";
 
 /**
  * Add filter in this page
- * Add pagination
+ * Infinity load more
  */
 
 function Page({ currentPage, category }) {
@@ -19,14 +20,10 @@ function Page({ currentPage, category }) {
 
   // ... handle loading and error states
   console.log(`data`, data)
+
   if (!data) {
     return (
       <>
-        {/* {
-          currentPage === 2 ?
-          <div className='py-4 h-4 w-32 bg-gray-200 animate-pulse rounded-sm md:rounded-md animate-pulse mb-4'></div>
-          : null
-        } */}
         <div className='grid grid-cols-2 md:grid-cols-4 gap-4 first:mt-0 mt-4'>
           {new Array(20).fill("").map((_, i) => (
             <SkeletonImage key={i} />
@@ -61,14 +58,8 @@ const index = ({ category }) => {
 
         <div>{pages}</div>
 
-        <div className='mt-4 h-12 relative' ref={setRef as any}>
-          <div
-            onClick={() => setPageCount(pageCount + 1)}
-            className={`py-2 px-4 text-center transition-all duration-700 ease-linear absolute inset-x-0 shadow-xl left-1/2 transform -translate-x-1/2  rounded-md  ${
-              isVisible ? "opacity-1 bottom-0 border-2 border-yellow-500" : "-bottom-40 opacity-0"
-            }`}>
-            <p>Load more</p>
-          </div>
+        <div className='mt-4 h-12 relative' ref={setRef}>
+          <LoadMoreBtn setPageCount={setPageCount} pageCount={pageCount} isVisible={isVisible} />
         </div>
       </Container>
     </App>
