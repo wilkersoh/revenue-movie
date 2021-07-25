@@ -12,7 +12,8 @@ export interface ListsProps {
 const Lists: React.FC<ListsProps> = ({ ...movies }) => {
   return (
     <ul className='grid grid-cols-2 md:grid-cols-4 gap-4 first:mt-0 mt-4'>
-      {movies?.results &&
+      test
+      {/* {movies?.results &&
         movies.results.map((movie) => (
           <li key={movie.id}>
             <Link href='#'>
@@ -27,7 +28,7 @@ const Lists: React.FC<ListsProps> = ({ ...movies }) => {
               </a>
             </Link>
           </li>
-        ))}
+        ))} */}
     </ul>
   );
 };
