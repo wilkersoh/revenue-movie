@@ -20,14 +20,14 @@ const Lists: React.FC<ListsProps> = ({ ...movies }) => {
             <li key={movie.id}>
               <Link href='#'>
                 <a>
-                  {/* <img src={imageUrl(movie)} className="w-full" alt="" /> */}
-                  <Image
+                  <img src={imageUrl(movie)} className="w-full" alt="" />
+                  {/* <Image
                     src={imageUrl(movie)}
                     alt={movie.title}
                     width={680}
                     height={400}
                     layout='responsive'
-                  />
+                  /> */}
                 </a>
               </Link>
             </li>
