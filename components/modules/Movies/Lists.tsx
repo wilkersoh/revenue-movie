@@ -1,4 +1,3 @@
-import SkeletonImage from "@/components/elements/SkeletonImage";
 import { imageUrl } from "@/utils/urls";
 import Image from "next/image";
 import Link from "next/link";
@@ -15,8 +14,8 @@ const Lists: React.FC<ListsProps> = ({ ...movies }) => {
       {movies?.results &&
         movies.results.map((movie, i) =>
         {
-          const title = movie?.original_title || movie?.title;
-          console.log(`${movie}: ${i}:::: `, movie);
+          const title = movie?.title || movie?.original_title;
+
           return (
             <li key={movie.id}>
               <Link href='#'>

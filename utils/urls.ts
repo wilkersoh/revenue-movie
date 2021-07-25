@@ -3,7 +3,7 @@ export const ORIGINAL_IMAGE_URL = "https://image.tmdb.org/t/p/original";
 
 export const imageUrl = (image) => {
   if (!image) return "/vercel.svg";
-
+  console.log("image url: ", image);
   if (image.backdrop_path) {
     const a = `${ORIGINAL_IMAGE_URL}${image.backdrop_path}?api_key=${process.env.TMDB_MOVIE_KEY}`;
 
