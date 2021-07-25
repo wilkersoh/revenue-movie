@@ -32,7 +32,7 @@ const ListItem = ({ results }) => {
   return (
     <ul className='flex overflow-x-auto -mx-4 md:-mx-16'>
       {results?.map((item) => {
-        const title = item?.original_title || item?.title
+        const title = item?.title || item?.original_title;
 
         return (
           <li key={item.id} className='flex-shrink-0 w-60 md:w-80'>
