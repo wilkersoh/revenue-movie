@@ -15,19 +15,19 @@ const Lists: React.FC<ListsProps> = ({ ...movies }) => {
       {movies?.results &&
         movies.results.map((movie, i) =>
         {
-          if(i > 4) return <div></div>;
+          const title = movie?.original_title || movie?.title;
+          console.log(`${movie}: ${i}:::: `, movie);
           return (
             <li key={movie.id}>
               <Link href='#'>
                 <a>
-                  <img src={imageUrl(movie)} className="w-full" alt="" />
-                  {/* <Image
+                  <Image
                     src={imageUrl(movie)}
                     alt={movie.title}
                     width={680}
                     height={400}
                     layout='responsive'
-                  /> */}
+                  />
                 </a>
               </Link>
             </li>
