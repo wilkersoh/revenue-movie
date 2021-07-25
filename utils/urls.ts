@@ -7,8 +7,8 @@ export const imageUrl = (image) => {
   if (image.backdrop_path)
     return `${ORIGINAL_IMAGE_URL}${image.backdrop_path}?api_key=${process.env.TMDB_MOVIE_KEY}`;
 
-  if (image.poster_path)
-    return `${ORIGINAL_IMAGE_URL}${image.poster_path}?api_key=${process.env.TMDB_MOVIE_KEY}`;
+  // if (image.poster_path)
+  //   return `${ORIGINAL_IMAGE_URL}${image.poster_path}?api_key=${process.env.TMDB_MOVIE_KEY}`;
 
   /**
    * fallback img
