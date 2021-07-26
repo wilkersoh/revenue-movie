@@ -1,6 +1,16 @@
-import React, { useState, useContext, createContext, useEffect } from "react";
+import React, { useState, useContext, createContext } from "react";
 
-const FilterContext = createContext({});
+type FilterContextType = {
+  onSearch: (event) => void;
+  search: string;
+  setSearch: any;
+  setFilteredMovies: any;
+  filteredMovies: any;
+  setIsSearchingFilter: any;
+  isSearchingFilter: boolean;
+};
+
+const FilterContext = createContext({} as FilterContextType);
 
 export function ProviderFilter({children}) {
   const filter = useProviderFilter();

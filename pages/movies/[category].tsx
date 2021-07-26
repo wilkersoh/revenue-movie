@@ -47,8 +47,11 @@ const index = ({ category }) => {
             <Filter category={category} />
           </div>
 
-          <Pages category={category} pageCount={pageCount} setPageCount={setPageCount} />
-
+          <Pages
+            category={category}
+            pageCount={pageCount}
+            setPageCount={setPageCount}
+          />
         </Container>
       </ProviderFilter>
     </App>

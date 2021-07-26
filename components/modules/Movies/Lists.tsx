@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { TransitionGroup, CSSTransition } from "react-transition-group";
 import { imageUrl } from "@/utils/urls";
 import { useFilter } from "@/utils/useFilters";
 import { DetailsType } from "../MovieList/interface";
