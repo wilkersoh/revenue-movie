@@ -1,5 +1,5 @@
 import App from "@/components/layouts/index"
-import { API_URL } from "@/utils/urls";
+import { API_URL, KEY } from "@/utils/urls";
 import { GetServerSideProps } from "next";
 
 import MovieList from "@/components/modules/MovieList/index"
@@ -24,7 +24,7 @@ export default function Home({ popularMovies }) {
 
 export const getServerSideProps: GetServerSideProps = async () => {
   const res_popular = await fetch(
-    `${API_URL}/popular?api_key=${process.env.TMDB_MOVIE_KEY}`
+    `${API_URL}/popular?api_key=${KEY}`
   );
   const popularMovies = await res_popular.json();
 

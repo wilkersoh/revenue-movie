@@ -6,19 +6,16 @@
 # APIs provided from [TMDB](https://www.themoviedb.org/documentation/api)
 
 # Structure
+```
 pages
 |--- movie
 |    |--- [name]
-|--- search
-|--- [category]
+|--- movies
+|    |--- [category]
+|--- index.tsx
 |
 |
-|
-
-components
-- search
-- pagination
-
+```
 
 
 # UI
@@ -33,6 +30,9 @@ components
 Category
 1. Popular movie
 2. Upcoming movie
+
+## Error with remote server (Images)
+- Indicate whether to send a cookie in a cross-site request by specifying its SameSite attribute
 
 ## Note
 

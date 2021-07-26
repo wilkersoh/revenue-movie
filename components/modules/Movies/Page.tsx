@@ -3,11 +3,10 @@ import SkeletonImage from "@/components/elements/SkeletonImage";
 import useSWR from "swr";
 import Lists from "./Lists";
 import { useFilter } from "@/utils/useFilters";
+import { KEY } from "@/utils/urls";
 
 const Page = ({ category, currentPage }) => {
-  const { data } = useSWR(
-    `/${category}?api_key=${process.env.TMDB_MOVIE_KEY}&page=${currentPage}`
-  );
+  const { data } = useSWR(`/${category}?api_key=${KEY}&page=${currentPage}`);
   const { setFilteredMovies } = useFilter();
 
   useEffect(() => {

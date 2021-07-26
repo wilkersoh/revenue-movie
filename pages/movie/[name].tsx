@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import App from "@/components/layouts/index";
 import Container from "@/components/Container";
 import useSwr from "swr";
-import { API_URL } from "@/utils/urls";
+import { KEY } from "@/utils/urls";
 import SkeletonVideo from "@/components/elements/SkeletonVideo";
 import Details from "@/components/modules/Movie/Details";
 
@@ -12,11 +12,11 @@ const Index = ({ name }) => {
   const router = useRouter();
 
   const { data: video } = useSwr(
-    `/${router.query.id}/videos?api_key=${process.env.TMDB_MOVIE_KEY}`
+    `/${router.query.id}/videos?api_key=${KEY}`
   );
 
   const { data: details } = useSwr(
-    `/${router.query.id}?api_key=${process.env.TMDB_MOVIE_KEY}`
+    `/${router.query.id}?api_key=${KEY}`
   );
   console.log(`details`, details)
   return (
