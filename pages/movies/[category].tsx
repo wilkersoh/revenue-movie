@@ -1,67 +1,56 @@
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import { GetStaticPaths, GetStaticProps } from "next";
-import useSwr from "swr";
 import useObserver from "@/utils/useObserver";
 import Container from "@/components/Container";
 import App from "@/components/layouts/index";
-import SkeletonImage from "@/components/elements/SkeletonImage";
-import Lists from "@/components/modules/Movies/Lists";
 import LoadMoreBtn from "@/components/modules/Movies/LoadMoreBtn";
+import Page from "@/components/modules/Movies/Page";
+import { ProviderFilter, useFilter } from "@/utils/useFilters";
+import Filter from "@/components/modules/Movies/Filter";
 
-/**
- * Add filter in this page
- * Infinity load more
- */
+const Pages = ({ category, pageCount, setPageCount }) => {
+  const pages = [];
 
-function Page({ currentPage, category }) {
-  const { data } = useSwr(
-    `/${category}?api_key=${process.env.TMDB_MOVIE_KEY}&page=${currentPage}`
-  );
-
-  // ... handle loading and error states
-  console.log(`data`, data)
-
-  if (!data) {
-    return (
-      <>
-        <div className='grid grid-cols-2 md:grid-cols-4 gap-4 first:mt-0 mt-4'>
-          {new Array(20).fill("").map((_, i) => (
-            <SkeletonImage key={i} />
-          ))}
-        </div>
-      </>
-    );
-  }
-
-  return <Lists {...data} />;
-}
-
-const index = ({ category }) => {
-  const [pageCount, setPageCount] = useState(2); // @default pageIndex start from : 2
   const [setRef, isVisible] = useObserver({
     threshold: 0.4,
   });
-
-  const pages = [];
+  const { search } = useFilter();
 
   for (let i = 2; i <= pageCount; i++) {
-    /**
-     * @default start from page 2
-     */
     pages.push(<Page currentPage={i} category={category} key={i} />);
   }
 
+
+  return (
+    <>
+      <div>{pages}</div>
+      <div className={`mt-4 h-12 relative ${search.length && "hidden"}`} ref={setRef}>
+        <LoadMoreBtn
+          setPageCount={setPageCount}
+          pageCount={pageCount}
+          isVisible={isVisible}
+        />
+      </div>
+    </>
+  );
+};
+
+const index = ({ category }) => {
+  const [pageCount, setPageCount] = useState(2); // @default pageIndex start from : 2
+
   return (
     <App>
-      <Container>
-        <h1 className='capitalize text-lg font-black py-4'>{category}</h1>
+      <ProviderFilter>
+        <Container>
+          <div className='flex justify-between items-center'>
+            <h1 className='capitalize text-lg font-black py-4'>{category}</h1>
+            <Filter category={category} />
+          </div>
 
-        <div>{pages}</div>
+          <Pages category={category} pageCount={pageCount} setPageCount={setPageCount} />
 
-        <div className='mt-4 h-12 relative' ref={setRef}>
-          <LoadMoreBtn setPageCount={setPageCount} pageCount={pageCount} isVisible={isVisible} />
-        </div>
-      </Container>
+        </Container>
+      </ProviderFilter>
     </App>
   );
 };
@@ -75,12 +64,8 @@ export const getStaticPaths: GetStaticPaths<{ category: string }> =
   };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  // const res = await fetch(`${API_URL}/${params.category}?api_key=${process.env.TMDB_MOVIE_KEY}`,)
-  // const movies = await res.json();
-
   return {
     props: {
-      // initialMovies: movies,
       category: params.category,
     },
   };

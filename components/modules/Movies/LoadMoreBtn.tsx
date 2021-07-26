@@ -11,10 +11,11 @@ const LoadMoreBtn: React.FC<LoadMoreBtnProps> = ({
   pageCount,
   isVisible,
 }) => {
+
   return (
     <div
       onClick={() => setPageCount(pageCount + 1)}
-      className={`py-2 px-4 text-center transition-all duration-700 ease-linear absolute inset-x-0 shadow-xl left-1/2 transform -translate-x-1/2  rounded-md  ${
+      className={`md:w-40 py-1 px-2 text-sm text-center transition-all duration-700 ease-linear absolute inset-x-0 shadow-xl left-1/2 transform -translate-x-1/2  rounded-md  ${
         isVisible
           ? "opacity-1 bottom-0 border-2 border-yellow-500"
           : "-bottom-40 opacity-0"
