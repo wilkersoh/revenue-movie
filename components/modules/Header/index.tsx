@@ -32,7 +32,7 @@ const index: React.FC = () => {
           <nav className='flex justify-between items-center h-full'>
             <div className='bg-yellow-300 py-1 px-2 rounded-sm font-sans font-black'>
               <Link href='/'>
-                <a>
+                <a className="focus:outline-none focus:border-0">
                   <p>TMDB</p>
                 </a>
               </Link>

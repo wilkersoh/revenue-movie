@@ -1,5 +1,4 @@
-export const API_URL = "https://api.themoviedb.org/3/movie";
-export const SEARCH_API = "https://api.themoviedb.org/3";
+export const BASE_URL = "https://api.themoviedb.org/3";
 export const ORIGINAL_IMAGE_URL = "https://image.tmdb.org/t/p/original";
 export const KEY = "3178a6cd01a89c8b2ba71e89f9de8c79";
 

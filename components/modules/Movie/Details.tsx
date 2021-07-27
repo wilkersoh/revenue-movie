@@ -41,13 +41,13 @@ const Companies = ({ companies }) => {
           companies.map((c, i) => (
             <li
               key={i}
-              className='flex-shrink-0 h-40 w-40 mr-3 border-2 border-solid border-red-50 relative '>
+              className='flex-shrink-0 h-48 w-40  mr-3 relative bg-white py-4'>
               <Image
                 src={`${ORIGINAL_IMAGE_URL}${c.logo_path}?api_key=${KEY}`}
                 layout='responsive'
                 width={200}
                 height={200}
-                className='object-contain'
+                className='object-contain w-full h-full'
               />
             </li>
           ))

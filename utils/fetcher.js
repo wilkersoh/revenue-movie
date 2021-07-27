@@ -1,7 +1,9 @@
-import { API_URL } from "./urls";
+import { BASE_URL } from "./urls";
 
-export default async (path) => {
-  const res = await fetch(`${API_URL}${path}`);
+const fetcher = async (path) => {
+  const res = await fetch(`${BASE_URL}/movie${path}`);
 
   return res.json();
 };
+
+export default fetcher;

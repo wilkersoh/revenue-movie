@@ -5,7 +5,7 @@ import App from "@/components/layouts/index";
 import Image from "next/image";
 import Container from "@/components/Container";
 import useSWR from "swr";
-import { imageUrl, KEY, SEARCH_API } from "@/utils/urls";
+import { imageUrl, KEY, BASE_URL } from "@/utils/urls";
 import SkeletonImage from "@/components/elements/SkeletonImage";
 import { dashString } from "@/utils/dashString";
 
@@ -15,7 +15,7 @@ const search = () => {
   const router = useRouter();
 
   const { data, error } = useSWR(
-    `${SEARCH_API}/search/movie?query=${router.query?.keyword}&api_key=${KEY}`,
+    `${BASE_URL}/search/movie?query=${router.query?.keyword}&api_key=${KEY}`,
     fetcher
   );
 
@@ -51,7 +51,8 @@ const search = () => {
         <ul className='grid grid-cols-2 md:grid-cols-4 gap-4 first:mt-0 mt-4'>
           {data?.results &&
             data.results.map((movie, i) => {
-              const title = movie?.title || movie?.original_title;
+              const title =
+                movie?.title || movie?.original_title || movie?.original_name;
               return (
                 <li key={movie.id}>
                   <Link href={`/movie/${dashString(title)}?id=${movie.id}`}>

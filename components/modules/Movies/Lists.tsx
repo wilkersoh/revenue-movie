@@ -87,7 +87,8 @@ const Lists: React.FC<ListsProps> = ({ ...movies }) => {
       <ul className='grid grid-cols-2 md:grid-cols-4 gap-4 first:mt-0 mt-4'>
         {movies?.results &&
           movies.results.map((movie, i) => {
-            const title = movie?.title || movie?.original_title;
+            const title =
+              movie?.title || movie?.original_title || movie?.original_name;
 
             let isShow = true;
             if (debouncedSearchTerm) {

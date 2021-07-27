@@ -6,9 +6,9 @@ import { imageUrl } from "@/utils/urls";
 import { dashString } from "@/utils/dashString";
 
 
-const index: React.FC<MovieListProps> = ({ category, total_pages, results }) => {
+const index: React.FC<MovieListProps> = ({ category, results = []}) => {
   return (
-    <div>
+    <div className="first-of-type:mt-0 mt-6">
       <div className='flex items-end justify-between mb-2 md:-mx-8'>
         <h2 className='capitalize text-lg'>{category}</h2>
         <Link href={`/movies/${category}`}>
@@ -24,11 +24,11 @@ const index: React.FC<MovieListProps> = ({ category, total_pages, results }) => 
 };
 
 const ListItem = ({ results }) => {
-
   return (
     <ul className='flex overflow-x-auto -mx-4 md:-mx-16'>
       {results?.map((movie) => {
-        const title = movie?.title || movie?.original_title;
+        const title =
+          movie?.title || movie?.original_title || movie?.original_name;
 
         return (
           <li key={movie.id} className='flex-shrink-0 w-60 md:w-80'>

@@ -22,7 +22,7 @@ const Index = ({ name }) => {
     <App>
       <div>
         <div className='w-full aspect-w-16 aspect-h-9 flex h-sVideo md:h-mVideo'>
-          {video?.results.length ? (
+          {video?.results?.length ? (
             <iframe
               className='w-full object-contain'
               src={`https://www.youtube.com/embed/${video.results[0].key}`}
