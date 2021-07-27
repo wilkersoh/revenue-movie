@@ -22,10 +22,10 @@ const index = () => {
         <div className="flex justify-center">
           <ul className="mr-10 md:mr-48">
             <li>
-              <div className='font-semibold'>API Provided</div>
-              <div className='h-24 w-24'>
+              <div className='h-24 w-28'>
                 <Link href='https://www.themoviedb.org/'>
                   <a target='_blank'>
+                    <div className='font-semibold'>API Provided</div>
                     <Image
                       src='/assets/tmdb.svg'
                       width={400}
