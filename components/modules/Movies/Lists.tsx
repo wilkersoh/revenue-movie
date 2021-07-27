@@ -99,8 +99,8 @@ const Lists: React.FC<ListsProps> = ({ ...movies }) => {
               <li key={movie.id} className={`${!isShow ? "hidden" : ""}`}>
                 <Link href={`/movie/${dashString(title)}?id=${movie.id}`}>
                   <a>
-                    <div className="w-full h-full blue">
-                      <img src={imageUrl(movie)} alt={movie.title}  />
+                    <div className="w-full h-full flex">
+                      <img src={imageUrl(movie)} alt={movie.title} className="object-cover w-full m-auto h-32 md:w-full md:h-40" />
                     </div>
                     {/* <Image
                       src={imageUrl(movie)}
