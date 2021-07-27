@@ -1,5 +1,5 @@
 import { GetStaticPaths, GetStaticProps } from "next";
-import React, {useEffect, useState } from "react";
+import React from "react";
 import { useRouter } from "next/router";
 import App from "@/components/layouts/index";
 import Container from "@/components/Container";
@@ -14,16 +14,15 @@ const Index = ({ name }) => {
   const { data: video } = useSwr(
     `/${router.query.id}/videos?api_key=${KEY}`
   );
-
   const { data: details } = useSwr(
     `/${router.query.id}?api_key=${KEY}`
   );
-  console.log(`details`, details)
+
   return (
     <App>
       <div>
         <div className='w-full aspect-w-16 aspect-h-9 flex h-sVideo md:h-mVideo'>
-          {video?.results ? (
+          {video?.results.length ? (
             <iframe
               className='w-full object-contain'
               src={`https://www.youtube.com/embed/${video.results[0].key}`}

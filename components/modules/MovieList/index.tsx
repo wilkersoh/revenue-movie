@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import MovieListProps from "./interface";
 import { imageUrl } from "@/utils/urls";
+import { dashString } from "@/utils/dashString";
 
 
 const index: React.FC<MovieListProps> = ({ category, total_pages, results }) => {
@@ -24,23 +25,18 @@ const index: React.FC<MovieListProps> = ({ category, total_pages, results }) => 
 
 const ListItem = ({ results }) => {
 
-  const dashString = (str) => {
-    const result = str.split(" ").join("-").toLowerCase();
-    return result;
-  }
-
   return (
     <ul className='flex overflow-x-auto -mx-4 md:-mx-16'>
-      {results?.map((item) => {
-        const title = item?.title || item?.original_title;
+      {results?.map((movie) => {
+        const title = movie?.title || movie?.original_title;
 
         return (
-          <li key={item.id} className='flex-shrink-0 w-60 md:w-80'>
-            <Link href={`/movie/${dashString(title)}?id=${item.id}`}>
+          <li key={movie.id} className='flex-shrink-0 w-60 md:w-80'>
+            <Link href={`/movie/${dashString(title)}?id=${movie.id}`}>
               <a>
                 <Image
-                  src={imageUrl(item)}
-                  alt={item.title}
+                  src={imageUrl(movie)}
+                  alt={movie.title}
                   width={680}
                   height={400}
                   layout='responsive'

@@ -7,6 +7,7 @@ import { DetailsType } from "../MovieList/interface";
 import useDebounce from "@/utils/useDebounce";
 import useObserver from "@/utils/useObserver";
 import SkeletonImage from "@/components/elements/SkeletonImage";
+import { dashString } from "@/utils/dashString";
 
 
 export interface ListsProps {
@@ -66,7 +67,7 @@ const Lists: React.FC<ListsProps> = ({ ...movies }) => {
 
   // No results
   if(search.length && !filteredOutID.length && !isFinished) {
-    return <div>{`Please try another search...`}</div>;
+    return <div className="first:block hidden">{`Please try another search...`}</div>;
   }
 
   // Loading
@@ -75,7 +76,7 @@ const Lists: React.FC<ListsProps> = ({ ...movies }) => {
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 first:mt-0 mt-4">
         {
           new Array(12).fill("").map((_, i) => (
-            <SkeletonImage height="h-24 md:h-36" key={i} />
+            <SkeletonImage height="h-32 md:h-40" key={i} />
           ))
         }
       </div>
@@ -94,19 +95,19 @@ const Lists: React.FC<ListsProps> = ({ ...movies }) => {
             } else isShow = true;
 
             return (
-                <li key={movie.id} className={`${!isShow ? "hidden" : ""}`}>
-                  <Link href='#'>
-                    <a>
-                      <Image
-                        src={imageUrl(movie)}
-                        alt={movie.title}
-                        width={680}
-                        height={400}
-                        layout='responsive'
-                      />
-                    </a>
-                  </Link>
-                </li>
+              <li key={movie.id} className={`${!isShow ? "hidden" : ""}`}>
+                <Link href={`/movie/${dashString(title)}?id=${movie.id}`}>
+                  <a>
+                    <Image
+                      src={imageUrl(movie)}
+                      alt={movie.title}
+                      width={680}
+                      height={400}
+                      layout='responsive'
+                    />
+                  </a>
+                </Link>
+              </li>
             );
           })}
       </ul>

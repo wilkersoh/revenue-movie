@@ -24,3 +24,17 @@
   color: black;
   background-color: #f5eaea;
 }
+
+@media  (min-width: 768px) {
+  .search-box input {
+    width: 200px;
+    padding-left: 1.85rem;
+    padding-right:  1.85rem;
+    background-color: #f5eaea;
+  }
+  .search-box input:focus {
+    width: 350px;
+    padding-left: 1.85rem;
+    padding-right:  1.85rem
+  }
+}
