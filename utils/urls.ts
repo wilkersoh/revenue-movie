@@ -5,11 +5,11 @@ export const KEY = "3178a6cd01a89c8b2ba71e89f9de8c79";
 export const imageUrl = (image) => {
   if (!image) return "/vercel.svg";
 
-  if (image.backdrop_path) return `${image.backdrop_path}?api_key=${KEY}`;
-  // return `${ORIGINAL_IMAGE_URL}${image.backdrop_path}?api_key=${KEY}`;
+  if (image.backdrop_path)
+    return `${ORIGINAL_IMAGE_URL}${image.backdrop_path}?api_key=${KEY}`;
 
-  if (image.poster_path) return `${image.poster_path}?api_key=${KEY}`;
-  // return `${ORIGINAL_IMAGE_URL}${image.poster_path}?api_key=${KEY}`;
+  if (image.poster_path)
+    return `${ORIGINAL_IMAGE_URL}${image.poster_path}?api_key=${KEY}`;
 
   /**
    * fallback img
