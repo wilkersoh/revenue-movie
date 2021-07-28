@@ -28,11 +28,20 @@ export default function Home({ popular, trending, nowPlaying, discoverHorror, to
 
 export const getServerSideProps: GetServerSideProps = async () => {
 
+  function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min) + min);
+  }
+
   const urls = [
     `${BASE_URL}/movie/popular?api_key=${KEY}`,
-    `${BASE_URL}/trending/all/day?api_key=${KEY}`,
-    `${BASE_URL}/movie/now_playing?api_key=${KEY}&page=12`,
-    `${BASE_URL}/discover/movie?api_key=${KEY}&with_genres=27&page=4`,
+    `${BASE_URL}/trending/all/day?api_key=${KEY}&page=${getRandomInt(2, 15)}`,
+    `${BASE_URL}/movie/now_playing?api_key=${KEY}&page=${getRandomInt(3, 15)}`,
+    `${BASE_URL}/discover/movie?api_key=${KEY}&with_genres=27&page=${getRandomInt(
+      1,
+      7
+    )}`,
     `${BASE_URL}/movie/top_rated?api_key=${KEY}`,
   ];
 
