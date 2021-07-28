@@ -36,7 +36,7 @@ const Pages = ({ category, pageCount, setPageCount }) => {
 };
 
 const index = ({ category }) => {
-  const [pageCount, setPageCount] = useState(2); // @default pageIndex start from : 2
+  const [pageCount, setPageCount] = useState(2); // @default pageCount start from : 2
 
   return (
     <App>
