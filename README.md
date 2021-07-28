@@ -11,6 +11,7 @@
   Error in cloud server to catch remotely api (Image Component from nextj)
   Indicate whether to send a cookie in a cross-site request by specifying its SameSite attribute
   ## Solution, use pure img html to load the image
+
 **/
 
 ```

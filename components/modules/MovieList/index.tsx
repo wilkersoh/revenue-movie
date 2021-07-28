@@ -34,6 +34,13 @@ const ListItem = ({ results }) => {
           <li key={movie.id} className='flex-shrink-0 w-60 md:w-80'>
             <Link href={`/movie/${dashString(title)}?id=${movie.id}`}>
               <a>
+                {/* <div className='w-full h-full flex'>
+                  <img
+                    src={imageUrl(movie)}
+                    alt={movie.title}
+                    className='object-cover w-full m-auto h-32 md:w-full md:h-40'
+                  />
+                </div> */}
                 <Image
                   src={imageUrl(movie)}
                   alt={movie.title}
@@ -44,7 +51,7 @@ const ListItem = ({ results }) => {
               </a>
             </Link>
           </li>
-        )})}
+        );})}
     </ul>
   );
 };
