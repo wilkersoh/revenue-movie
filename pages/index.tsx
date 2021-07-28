@@ -7,6 +7,7 @@ import Container from "@/components/Container";
 
 
 export default function Home({ popular, trending, nowPlaying, discoverHorror, topRated }) {
+
   return (
     <App>
       <Container>

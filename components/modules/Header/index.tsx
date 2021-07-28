@@ -39,7 +39,7 @@ const index: React.FC = () => {
             </div>
             <div className='flex'>
               <Search />
-              <Account />
+              {/* <Account /> */}
             </div>
           </nav>
         </Container>
