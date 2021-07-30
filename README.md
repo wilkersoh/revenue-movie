@@ -13,21 +13,21 @@ cp .env.example .env.local
 
 > Restart server if you updated .env.local file
 
+
 # APIs provided from [TMDB](https://www.themoviedb.org/documentation/api)
+
 
 ``` javascript
 
-/**
+/** Only Error in Cloud Server Side
   Error in cloud server to catch remotely api (Image Component from nextj)
   Indicate whether to send a cookie in a cross-site request by specifying its SameSite attribute
   ## Solution, use pure img html to load the image
-
 **/
 
 ```
 
-
-# Server:
+# Server info:
 1. Change package port to **3005**
 
 ```json
