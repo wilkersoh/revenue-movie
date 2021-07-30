@@ -34,3 +34,18 @@ cp .env.example .env.local
 **/
 
 ```
+
+
+# Server:
+1. Change package port to **3005**
+
+```json
+{
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start -p 3005",
+    "pm2": "pm2"
+  },
+}
+```
