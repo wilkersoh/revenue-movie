@@ -7,9 +7,8 @@
 cp .env.example .env.local
 
 ```
-3. yarn build
-4. yarn dev
-5. serve in localhost:3000
+3. yarn dev
+4. serve in localhost:3000
 
 > Restart server if you updated .env.local file
 
