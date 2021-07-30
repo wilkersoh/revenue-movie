@@ -32,6 +32,8 @@ cp .env.example .env.local
 
   j. Copy Client Secrets into .env.local
 
+> Restart server if you updated .env.local file
+
 # APIs provided from [TMDB](https://www.themoviedb.org/documentation/api)
 
 ``` javascript
