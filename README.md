@@ -10,7 +10,7 @@ cp .env.example .env.local
 
 ```
 
-5. Auth0
+5. ## Auth0
   1. Go to Github
   2. Settings
   3. Developer Settings
