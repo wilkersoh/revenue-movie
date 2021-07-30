@@ -1,14 +1,15 @@
 # How to start
 1. yarn install
-2. yarn start
-3. serve in localhost:3000
-4.
+2.
 
 ```bash
 
 cp .env.example .env.local
 
 ```
+
+3. yarn start
+4. serve in localhost:3000
 
 5. Setup Github Auth0
   a. Go to Github
