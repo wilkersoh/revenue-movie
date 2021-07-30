@@ -1,34 +1,12 @@
 import App from "@/components/layouts/index"
 import { BASE_URL, KEY } from "@/utils/urls";
 import { GetServerSideProps } from "next";
-import { useSession, signIn, signOut } from "next-auth/client";
 
 import MovieList from "@/components/modules/MovieList/index"
 import Container from "@/components/Container";
 
 
 export default function Home({ popular, trending, nowPlaying, discoverHorror, topRated }) {
-    // const [session, loading] = useSession();
-
-    // if (session) {
-    //   return (
-    //     <div style={{ color: "black" }}>
-    //       Signed in as {session.user.name} <br />
-    //       <button onClick={() => signOut()}>Sign out</button>
-    //     </div>
-    //   );
-    // }
-    // return (
-    //   <>
-    //   <div style={{color: 'black'}}>
-    //     Not signed in <br />
-    //     <button onClick={() => signIn()}>Sign in</button>
-
-    //   </div>
-    //   </>
-    // );
-
-
 
   return (
     <App>

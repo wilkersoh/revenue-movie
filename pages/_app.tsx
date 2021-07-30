@@ -4,12 +4,12 @@ import fetcher from "@/utils/fetcher";
 import "@/styles/globals.tailwind.css";
 import "@/styles/index.css";
 
-function MyApp({ Component, pageProps }) {
-
+const MyApp = ({ Component, pageProps }) => {
+  const {session} = pageProps;
   return (
     <Provider
-      session={pageProps.session}
-      options={{ baseUrl: "http://localhost:3000" }}>
+      session={session}
+      options={{ baseUrl: process.env.SITE }}>
       <SWRConfig
         value={{
           refreshInterval: 5000,
@@ -20,5 +20,6 @@ function MyApp({ Component, pageProps }) {
     </Provider>
   );
 }
+
 
 export default MyApp;
