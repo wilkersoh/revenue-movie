@@ -1,9 +1,13 @@
-# How to start
+# How to start (without OAuth)
 1. yarn install
+2.
+```javascript
+
+cp .env.example .env.local
+
+```
 2. yarn start
 3. serve in localhost:3000
-
-# Take note, I'll removed my GITHUB KEY after Aug 04
 
 # APIs provided from [TMDB](https://www.themoviedb.org/documentation/api)
 
