@@ -11,27 +11,6 @@ cp .env.example .env.local
 3. yarn start
 4. serve in localhost:3000
 
-5. Setup Github Auth0
-  a. Go to Github
-
-  b. Settings
-
-  c. Developer Settings
-
-  d. OAuth Apps
-
-  e. Create OAuth App
-
-  f. Fill in Application Name - Any name
-
-  g. Fill in Homepage Url - http://localhost:3000
-
-  h. Fill in Authorization callback URL - http://localhost:3000/api/auth/callback/github
-
-  i. Copy Client ID into .env.local
-
-  j. Copy Client Secrets into .env.local
-
 > Restart server if you updated .env.local file
 
 # APIs provided from [TMDB](https://www.themoviedb.org/documentation/api)
