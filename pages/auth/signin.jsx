@@ -32,13 +32,13 @@ export default function SignIn({ providers }) {
         <div className='flex flex-col justify-center items-center py-20'>
           <form className='flex w-full justify-center'>
             {Object.values(providers).map((provider) => (
-              <div key={provider.id} className='m-auto'>
+              <div key={provider?.id} className='m-auto'>
                 <button
                   type='button'
                   className='flex py-4 px-10 text-center border-2 border-yellow-300 border-solid'
-                  onClick={() => signIn(provider.id)}>
-                  {provider.name == "GitHub" ? <GitHubIcon /> : ""}
-                  <div>Sign in with {provider.name}</div>
+                  onClick={() => signIn(provider?.id)}>
+                  {provider?.name == "GitHub" ? <GitHubIcon /> : ""}
+                  <div>Sign in with {provider?.name}</div>
                 </button>
               </div>
             ))}
