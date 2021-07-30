@@ -11,16 +11,16 @@ cp .env.example .env.local
 ```
 
 5. ## Auth0
-  1. Go to Github
-  2. Settings
-  3. Developer Settings
-  4. OAuth Apps
-  5. Create OAuth App
-  6. Fill in Application Name - Any name
-  7. Fill in Homepage Url - http://localhost:3000
-  8. Fill in Authorization callback URL - http://localhost:3000/api/auth/callback/github
-  9. Copy Client ID into .env.local
-  10. Copy Client Secrets into .env.local
+  a. Go to Github
+  b. Settings
+  c. Developer Settings
+  d. OAuth Apps
+  e. Create OAuth App
+  f. Fill in Application Name - Any name
+  g. Fill in Homepage Url - http://localhost:3000
+  h. Fill in Authorization callback URL - http://localhost:3000/api/auth/callback/github
+  i. Copy Client ID into .env.local
+  j. Copy Client Secrets into .env.local
 
 # APIs provided from [TMDB](https://www.themoviedb.org/documentation/api)
 
