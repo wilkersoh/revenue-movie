@@ -1,24 +1,27 @@
 import React from "react";
 import { useSession } from "next-auth/client";
-import { useRouter } from "next/router";
+import Link from "next/link";
 
 const Account = () => {
-  // const [session, loading] = useSession();
-  const router = useRouter();
+  const [session, loading] = useSession();
 
-  const goToSignUp = () => {
-    router.push("/account/signup");
+  if (!session) {
+    return (
+      <div>
+        <Link href='/auth/signin'>
+          <a>Sign in</a>
+        </Link>
+      </div>
+    );
   }
-
-  // console.log(`session: `, session)
-
-  // if (!session) {
-  //   return <div onClick={goToSignUp}>Sign in</div>;
-  // }
 
   return (
     <div className='cursor-pointer flex items-center'>
-      <p>Logo</p>
+      <Link href='/auth/me'>
+        <a>
+        <p>{session.user.name}</p>
+        </a>
+      </Link>
     </div>
   );
 };

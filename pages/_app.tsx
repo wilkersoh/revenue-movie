@@ -5,9 +5,11 @@ import "@/styles/globals.tailwind.css";
 import "@/styles/index.css";
 
 function MyApp({ Component, pageProps }) {
-  const { session } = pageProps;
+
   return (
-    <Provider session={session}>
+    <Provider
+      session={pageProps.session}
+      options={{ baseUrl: "http://localhost:3000" }}>
       <SWRConfig
         value={{
           refreshInterval: 5000,

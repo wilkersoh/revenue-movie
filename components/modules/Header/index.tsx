@@ -1,5 +1,6 @@
 import {useState, useEffect} from "react"
 import Link from "next/link";
+import { useSession, signIn, signOut } from "next-auth/client";
 import Account from "@/components/Account";
 import Container from "@/components/Container";
 import Search from "@/components/Search";
@@ -37,9 +38,9 @@ const index: React.FC = () => {
                 </a>
               </Link>
             </div>
-            <div className='flex'>
+            <div className='flex items-center'>
               <Search />
-              {/* <Account /> */}
+              <Account />
             </div>
           </nav>
         </Container>

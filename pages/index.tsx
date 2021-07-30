@@ -1,12 +1,34 @@
 import App from "@/components/layouts/index"
 import { BASE_URL, KEY } from "@/utils/urls";
 import { GetServerSideProps } from "next";
+import { useSession, signIn, signOut } from "next-auth/client";
 
 import MovieList from "@/components/modules/MovieList/index"
 import Container from "@/components/Container";
 
 
 export default function Home({ popular, trending, nowPlaying, discoverHorror, topRated }) {
+    // const [session, loading] = useSession();
+
+    // if (session) {
+    //   return (
+    //     <div style={{ color: "black" }}>
+    //       Signed in as {session.user.name} <br />
+    //       <button onClick={() => signOut()}>Sign out</button>
+    //     </div>
+    //   );
+    // }
+    // return (
+    //   <>
+    //   <div style={{color: 'black'}}>
+    //     Not signed in <br />
+    //     <button onClick={() => signIn()}>Sign in</button>
+
+    //   </div>
+    //   </>
+    // );
+
+
 
   return (
     <App>
@@ -38,10 +60,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
     `${BASE_URL}/movie/popular?api_key=${KEY}`,
     `${BASE_URL}/trending/all/day?api_key=${KEY}&page=${getRandomInt(2, 15)}`,
     `${BASE_URL}/movie/now_playing?api_key=${KEY}&page=${getRandomInt(3, 15)}`,
-    `${BASE_URL}/discover/movie?api_key=${KEY}&with_genres=27&page=${getRandomInt(
-      1,
-      7
-    )}`,
+    `${BASE_URL}/discover/movie?api_key=${KEY}&with_genres=27&page=${getRandomInt(1,7)}`,
     `${BASE_URL}/movie/top_rated?api_key=${KEY}`,
   ];
 
