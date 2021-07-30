@@ -1,20 +1,9 @@
-# How to start with OAuth (Something wrong with yarn build, yarn start in OAuth)
-1.
-
-```bash
-
-cp .env.example .env.local
-
-```
-2. yarn install
-3. yarn dev (Don't use yarn build && yarn start)
-4. serve in localhost:3000
-
-> Restart server if you updated .env.local file
-
+# How to start
+1. yarn install
+2. yarn start
+3. serve in localhost:3000
 
 # Take note, I'll removed my GITHUB KEY after Aug 04
-
 
 # APIs provided from [TMDB](https://www.themoviedb.org/documentation/api)
 

@@ -5,31 +5,31 @@ import App from "@/components/layouts/index";
 import Container from "@/components/Container";
 
 export default function SignIn({ providers }) {
-  const router = useRouter();
-  const [ session ] = useSession();
-  const onBack = () => {
-    router.push("/");
-  };
+  // const router = useRouter();
+  // const [ session ] = useSession();
+  // const onBack = () => {
+  //   router.push("/");
+  // };
 
-  useEffect(() => {
-    if (session) return;
+  // useEffect(() => {
+  //   if (!session) return;
 
 
-    router.push("/")
-  }, [session]);
+  //   router.push("/")
+  // }, [session]);
 
-  if(session) {
-    <App>
-      <Container>
-        Redirect...
-      </Container>
-    </App>
-  }
+  // if(session) {
+  //   <App>
+  //     <Container>
+  //       Redirect...
+  //     </Container>
+  //   </App>
+  // }
 
   return (
     <App>
       <Container>
-        <div className='flex flex-col justify-center items-center py-20'>
+        {/* <div className='flex flex-col justify-center items-center py-20'>
           <form className='flex w-full justify-center'>
             {Object.values(providers).map((provider) => (
               <div key={provider?.id} className='m-auto'>
@@ -46,16 +46,21 @@ export default function SignIn({ providers }) {
           <div className='mt-20 cursor-pointer' onClick={onBack}>
             Back To Home
           </div>
-        </div>
+        </div> */}
       </Container>
     </App>
   );
 }
 
 export async function getStaticProps(context) {
+  // return {
+  //   props: { providers: await providers(context) }, // will be passed to the page component as props
+  // };
   return {
-    props: { providers: await providers(context) }, // will be passed to the page component as props
-  };
+    props: {
+      providers: ""
+    }
+  }
 }
 
 const GitHubIcon = () => (
