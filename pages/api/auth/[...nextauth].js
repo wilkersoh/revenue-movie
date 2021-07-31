@@ -11,24 +11,18 @@ const database = {
 };
 
 const options = {
-  /**
-   * same providers but somehow cannot work.
-   * Debug it later
-   */
-  // providers: [
-  //   Providers.Github({
-  //     clientId: process.env.GITHUB_ID,
-  //     clientSecret: process.env.GITHUB_SECRET
-  //   })
-  // ],
   providers: [
     Providers.GitHub({
       clientId: process.env.GITHUB_ID,
       clientSecret: process.env.GITHUB_SECRET,
     }),
   ],
-  database: process.env.DATABASE_URL,
-  synchronize: true,
+  // database: database,
+  // adapter: Adapters.TypeORM.Adapter({
+  //   type: "sqlite",
+  //   database: ":memory:",
+  //   synchronize: true,
+  // }),
   pages: {
     signIn: "/auth/signin",
   },

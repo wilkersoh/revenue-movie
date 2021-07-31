@@ -1,35 +1,45 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { providers, useSession, signIn } from "next-auth/client";
+import { getProviders ,useSession, signIn } from "next-auth/client";
 import App from "@/components/layouts/index";
 import Container from "@/components/Container";
 
-export default function SignIn({ providers }) {
-  // const router = useRouter();
-  // const [ session ] = useSession();
-  // const onBack = () => {
-  //   router.push("/");
-  // };
+export default function SignIn() {
 
-  // useEffect(() => {
-  //   if (!session) return;
+  const router = useRouter();
+  const [ session ] = useSession();
+  const [providers, setProviders ] = useState({});
+  const onBack = () => {
+    router.push("/");
+  };
+
+  useEffect(()=> {
+    const test = async () => {
+      const nextProviders = await getProviders();
+      setProviders(nextProviders);
+    }
+    test()
+  },[])
+
+  useEffect(() => {
+    if (!session) return;
 
 
-  //   router.push("/")
-  // }, [session]);
+    router.push("/")
+  }, [session]);
 
-  // if(session) {
-  //   <App>
-  //     <Container>
-  //       Redirect...
-  //     </Container>
-  //   </App>
-  // }
+  if(session) {
+    <App>
+      <Container>
+        Redirect...
+      </Container>
+    </App>
+  }
 
   return (
     <App>
       <Container>
-        {/* <div className='flex flex-col justify-center items-center py-20'>
+        <div className='flex flex-col justify-center items-center py-20'>
           <form className='flex w-full justify-center'>
             {Object.values(providers).map((provider) => (
               <div key={provider?.id} className='m-auto'>
@@ -46,22 +56,20 @@ export default function SignIn({ providers }) {
           <div className='mt-20 cursor-pointer' onClick={onBack}>
             Back To Home
           </div>
-        </div> */}
+        </div>
       </Container>
     </App>
   );
 }
 
-export async function getStaticProps(context) {
-  // return {
-  //   props: { providers: await providers(context) }, // will be passed to the page component as props
-  // };
-  return {
-    props: {
-      providers: ""
-    }
-  }
-}
+// export async function getStaticProps(context) {
+//   const providers = await providers(context);
+//   console.log('providers :>> ', providers);
+
+//   return {
+//     props: { providers: providers }, // will be passed to the page component as props
+//   };
+// }
 
 const GitHubIcon = () => (
   <div className='flex-shrink-0 w-max-content pr-2'>
