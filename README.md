@@ -14,8 +14,11 @@ cp .env.example .env.local
 
 ```
 
-# Server info:
+# Server Info
+
 1. Change package port to **3005**
+
+### Current Github OAuth are serve in port 3000
 
 ```json
 {
@@ -28,7 +31,8 @@ cp .env.example .env.local
 }
 ```
 
-# Server Error
+
+### Server Error
 
 ``` javascript
 
@@ -37,3 +41,6 @@ cp .env.example .env.local
   Indicate whether to send a cookie in a cross-site request by specifying its SameSite attribute
   ## Solution, use pure img html to load the image
 **/
+
+### Server need to setup database for OAuth (havn't done it yet)
+
