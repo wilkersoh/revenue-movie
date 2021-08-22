@@ -14,7 +14,7 @@ cp .env.example .env.local
 
 ```
 
-# Server Info
+# Selfpaths Server Info
 
 1. Change package port to **3005**
 
@@ -32,7 +32,7 @@ cp .env.example .env.local
 ```
 
 
-### Server Error
+### Selfpaths Server Error
 
 ``` javascript
 
@@ -42,5 +42,5 @@ cp .env.example .env.local
   ## Solution, use pure img html to load the image
 **/
 
-### Server need to setup database for OAuth (havn't done it yet)
+### Selfpaths Server need to setup database for OAuth (havn't done it yet)
 
